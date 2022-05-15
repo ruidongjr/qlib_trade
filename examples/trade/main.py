@@ -6,6 +6,7 @@ from executor import Executor
 import warnings
 import redis
 import subprocess
+from time import time
 
 warnings.filterwarnings("ignore")
 
@@ -59,9 +60,12 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--index", type=int, default=None)
     args = parser.parse_args()
 
-    print(os.cpu_count())
+    print(f"CPU count: {os.cpu_count()}")
+    s = time()
 
-    EXP_PATH = os.environ["EXP_PATH"]
+    EXP_PATH = "./exp"  # os.environ["EXP_PATH"]
+    if args.config is None:
+        args.config = "example/OPDT/config.yml"
     config_path = os.path.normpath(os.path.join(EXP_PATH, args.config))
     EXP_NAME = os.path.relpath(config_path, EXP_PATH)
     if os.path.isdir(config_path):
@@ -133,3 +137,5 @@ if __name__ == "__main__":
         run(config)
     else:
         print("The config path should be a relative path from EXP_PATH")
+
+    print(f"\nUsed {round((time()-s)/60, 1)}min.")

@@ -4,19 +4,21 @@
 import sys
 import fire
 from pathlib import Path
+import sys
+sys.path.append("../..")
 
 import qlib
 import pickle
 import numpy as np
 import pandas as pd
 from qlib.config import REG_CN, HIGH_FREQ_CONFIG
-from qlib.contrib.model.gbdt import LGBModel
-from qlib.contrib.data.handler import Alpha158
-from qlib.contrib.strategy.strategy import TopkDropoutStrategy
-from qlib.contrib.evaluate import (
-    backtest as normal_backtest,
-    risk_analysis,
-)
+# from qlib.contrib.model.gbdt import LGBModel
+# from qlib.contrib.data.handler import Alpha158
+# from qlib.contrib.strategy.strategy import TopkDropoutStrategy
+# from qlib.contrib.evaluate import (
+#     backtest as normal_backtest,
+#     risk_analysis,
+# )
 
 from qlib.utils import init_instance_by_config, exists_qlib_data
 from qlib.data.dataset.handler import DataHandlerLP

@@ -172,7 +172,7 @@ MODE_CONF = {
         "dataset_provider": "LocalDatasetProvider",
         "provider": "LocalProvider",
         # config it in user's own code
-        "provider_uri": "~/.qlib/qlib_data/cn_data",
+        "provider_uri": "../cn_data",
         # cache
         # Using parameter 'remote' to announce the client is using server_cache, and the writing access will be disabled.
         "expression_cache": "DiskExpressionCache",
@@ -193,7 +193,7 @@ MODE_CONF = {
 }
 
 HIGH_FREQ_CONFIG = {
-    "provider_uri": "~/.qlib/qlib_data/yahoo_cn_1min",
+    "provider_uri": "../yahoo_cn_1min",
     "dataset_cache": None,
     "expression_cache": "DiskExpressionCache",
     "region": REG_CN,
