@@ -33,7 +33,7 @@ class HighfreqWorkflow(object):
 
     SPEC_CONF = {"custom_ops": [DayLast, FFillNan, BFillNan, Date, Select, IsNull, Cut], "expression_cache": None}
 
-    MARKET = "all"
+    MARKET = "csi300"
     BENCHMARK = "SH000300"
 
     start_time = "2020-09-15 00:00:00"
